@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class FirstPersonLook : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class FirstPersonLook : MonoBehaviour
     {
         // Lock the mouse cursor to the game screen.
         Cursor.lockState = CursorLockMode.Locked;
+
+        sensitivity = Options.SensitivityValue;
     }
 
     void Update()

@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    void Start()
+    {
+        Screen.fullScreen = true;
+    } 
+
     public void PlayGame ()
     {
         // File > Build Settings... Make sure Scenes/start_menu has index 0 and Scenes/Level01 has index 1
