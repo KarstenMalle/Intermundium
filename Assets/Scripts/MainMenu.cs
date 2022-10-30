@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public Slider VolumeSlider;
+    public static float VolumeLevel;
+
+
     void Start()
     {
         Screen.fullScreen = true;
+        VolumeLevel = 1;
     } 
 
     public void PlayGame ()

@@ -12,16 +12,19 @@ public class Options : MonoBehaviour
     public Slider SensitivitySlider;
     public static float SensitivityValue;
 
+    public Slider VolumeSlider;
+    public static float VolumeValue;
+
     void Start()
     {
-        SensitivityValue = SensitivitySlider.value;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         SensitivityValue = SensitivitySlider.value;
-        Debug.Log(SensitivityValue);
+        VolumeValue = VolumeSlider.value;
     }
 
     public void ResMax ()
