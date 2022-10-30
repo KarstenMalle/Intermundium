@@ -24,6 +24,11 @@ public class VolumeLevel : MonoBehaviour
         {
             m_MyAudioSourse.volume = Options.VolumeValue;
         }
-        Debug.Log(m_MyAudioSourse.volume);
+        //Debug.Log(m_MyAudioSourse.volume);
     }
 }
+
+/* To use this script, add it to an object that has an audio source
+ * Simply drag the Audio Source component to the Volumer script 
+ * component in the "My Audio Source" slot.
+ */

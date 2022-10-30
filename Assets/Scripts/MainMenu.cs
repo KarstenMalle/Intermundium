@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
         Screen.fullScreen = true;
         VolumeLevel = 1;
     } 
