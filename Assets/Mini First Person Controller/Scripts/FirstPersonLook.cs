@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class FirstPersonLook : MonoBehaviour
 {
     [SerializeField]
     Transform character;
-    public float sensitivity = 2;
+    public static float sensitivity = 2f;
     public float smoothing = 1.5f;
+
+    float tmp_sensitivity = 0f;
 
     Vector2 velocity;
     Vector2 frameVelocity;
-
 
     void Reset()
     {
@@ -24,10 +27,17 @@ public class FirstPersonLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         sensitivity = Options.SensitivityValue;
+        if (sensitivity == 0f) sensitivity = 2f;
     }
 
     void Update()
     {
+        //if (sensitivity == 0f) sensitivity = 2f; //testing purposes
+
+        if (Input.GetKeyDown(KeyCode.Escape) && PauseMenu.GameIsPaused) sensitivity = 0f;
+
+        Debug.Log(sensitivity);
+
         // Get smooth velocity.
         Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);

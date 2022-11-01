@@ -26,6 +26,10 @@ public class MainMenu : MonoBehaviour
     public void QuitGame ()
     {
         Debug.Log("Quit");
+        //Make exit button work in Unity Editor
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; 
+        #endif
         Application.Quit();
     }
 }
