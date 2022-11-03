@@ -9,4 +9,17 @@
 * Mikkel Rohde Silkeborg
 
 ### Git instructions:
-* 1st: ```git add .```
+#### How to push to git.
+```
+git add . 
+```
+```
+git commit --all -m "INSERT MESSAGE HERE"
+```
+```
+git push
+```
+#### How to pull from git.
+```
+git pull
+```
