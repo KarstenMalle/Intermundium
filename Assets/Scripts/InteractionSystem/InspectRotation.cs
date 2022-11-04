@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InspectRotation : MonoBehaviour
 {
-    float RotationSpeed = 1f;
+    float RotationSpeed = 4f;
 
     private void OnMouseDrag()
     {
