@@ -1,47 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class Phone : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _promt;
-    public string _password = "1234";
-    private string _userInput = "";
+    public int _password = 1234;
+    int _guessedNumber;
+    private string _guessedDigits = "";
+    private bool _ePressed = false;
 
-    public string InteractionPrompt => _promt;
+    public GameObject levelBlocker;
 
-    private void Start()
+    void Update()
     {
-        _userInput = "";
-    }
-
-    public void PasswordEntered(string number)
-    {
-        _userInput += number;
-        if (_userInput.Length == 4)
+        if (Input.anyKeyDown && _ePressed)
         {
-            if(_userInput == _password)
+            if (int.TryParse(Input.inputString, out _guessedNumber))
             {
-                Debug.Log("Correct code!");
-                _userInput = "";
-            }
-            else
-            {
-                Debug.Log("Wrong code!");
-                _userInput = "";
+                _guessedDigits += _guessedNumber.ToString();
+       
+                Debug.Log(_guessedNumber);
+                Debug.Log(_guessedDigits);
+                if (int.Parse(_guessedDigits) == _password)
+                {
+                    Debug.Log("Correct code!");
+                    levelBlocker.SetActive(false);
+                }
+                else
+                {
+                    Debug.Log("Wrong code!");
+                }
+
+                if (_guessedDigits.Length == 4)
+                {
+                    _guessedDigits = "";
+                }
             }
         }
 
     }
 
+    public string InteractionPrompt => _promt;
+
     public bool Interact(Interactor interactor)
     {
-
-
-        Start();
+        Debug.Log("Using Phone");
+        _ePressed = true;
         
-        PasswordEntered();
+        Update();
+        
 
 
         return true;
