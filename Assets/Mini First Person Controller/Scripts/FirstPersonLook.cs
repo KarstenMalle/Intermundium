@@ -10,8 +10,6 @@ public class FirstPersonLook : MonoBehaviour
     public static float sensitivity = 2f;
     public float smoothing = 1.5f;
 
-    float tmp_sensitivity = 0f;
-
     Vector2 velocity;
     Vector2 frameVelocity;
 
@@ -35,8 +33,6 @@ public class FirstPersonLook : MonoBehaviour
         //if (sensitivity == 0f) sensitivity = 2f; //testing purposes
 
         if (Input.GetKeyDown(KeyCode.Escape) && PauseMenu.GameIsPaused) sensitivity = 0f;
-
-        Debug.Log(sensitivity);
 
         // Get smooth velocity.
         Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
