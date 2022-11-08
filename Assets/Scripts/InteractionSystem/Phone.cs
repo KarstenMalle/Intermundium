@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 //using System.Diagnostics;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class Phone : MonoBehaviour, IInteractable
@@ -12,9 +13,27 @@ public class Phone : MonoBehaviour, IInteractable
     private bool _ePressed = false;
 
     public GameObject levelBlocker;
+    public GameObject toolTip;
+    private GameObject player;
+    public GameObject phoneObject;
+
+    void Start()
+    {
+        player = GameObject.Find("Capsule Mesh");
+        toolTip.SetActive(false);
+    }
 
     void Update()
     {
+        if (Vector3.Distance(player.transform.position, phoneObject.transform.position) < (2 * 1) && _ePressed == false)
+        {
+            //Debug.Log((player.transform.position - this.transform.position).sqrMagnitude);
+            toolTip.SetActive(true);
+        }
+        else
+        {
+            toolTip.SetActive(false);
+        }
         if (Input.anyKeyDown && _ePressed)
         {
             if (int.TryParse(Input.inputString, out _guessedNumber))
