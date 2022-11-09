@@ -1,0 +1,29 @@
+[33m4919a54[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m removed unused models
+[33m2a39df2[m Removed large models
+[33m4ae405b[m Removed unnecessary models and added door script
+[33m7fea966[m Added texture packs
+[33m7cd02d3[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m something
+[33m173b071[m Added InstructionScene
+[33ma335f14[m Chandelier and light update
+[33m14e1676[m Added first puzzle and light flicker
+[33m1924c14[m Known error due to function not completed, will be fixed quickly
+[33mec9c2bf[m interact mechanic implemented, working on inspect 3D object
+[33mb182246[m Merge branch 'master' of https://github.com/KarstenMalle/Intermundium
+[33m31f520a[m update to level 01
+[33m7268638[m update to level 01
+[33m9113d40[m Update README.md
+[33m81f570c[m Update README.md
+[33m7d03869[m meta data added
+[33m5e73cef[m level 1 models and first person controller update
+[33m132552d[m fixing gitignore 02
+[33m96e55b3[m try to fix gitignore
+[33m7887d8b[m Models for lvl 1 - 02
+[33mcd90137[m Added models for level 1
+[33m0ed9813[m Added tutorial text
+[33m64facfb[m Merge branch 'master' of https://github.com/KarstenMalle/Intermundium
+[33m09e5540[m Added 3d object
+[33mf14fee1[m Adding models 01
+[33mdb243d1[m Updating level 1 and 2
+[33m627d7e1[m level update
+[33me32f48e[m Create README.md
+[33md8d35f5[m First commit, empty project and .gitignore
