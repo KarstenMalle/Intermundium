@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,11 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
     [SerializeField] private Animator myDoor = null;
 
     private bool doorOpen = false;
+    private string doorName = "";
     private float deltaT = 0;
+
+    private GameObject player;
+    public GameObject doorObject;
 
     //[SerializeField] private bool openTrigger = false;
 
@@ -30,17 +35,33 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
         }
     }
     */
+    void Start()
+    {
+        player = GameObject.Find("Capsule Mesh");
+    }
 
     void Update()
     {
+        //Vector3 doorRelative = doorObject.transform.InverseTransformPoint(player.transform.position);
+
+        //Debug.Log(Vector3.Distance(doorRelative, player.transform.position));
+
         if (doorOpen)
         {
             deltaT += Time.deltaTime;
             if (deltaT > 20)
             {
+
                 Debug.Log("insert SLAM sound :)");
                 deltaT = 0;
-                myDoor.Play("DoorClose", 0, 0.0f);
+                if (doorName == "DoorOpen")
+                {
+                    myDoor.Play("DoorClose", 0, 0.0f);
+                }
+                else
+                {
+                    myDoor.Play("DoorClose2", 0, 0.0f);
+                }
                 doorOpen = false;
             }
         }
@@ -48,21 +69,48 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        if(!doorOpen)
+        Vector3 doorRelative = doorObject.transform.InverseTransformPoint(player.transform.position);
+        if (!doorOpen)
         {
-            Debug.Log("Door clicked");
-            myDoor.Play("DoorOpen", 0, 0.0f);
-            doorOpen = true;
+            if (doorRelative.z > 0)
+            {
+                Debug.Log("Door clicked infront");
+                myDoor.Play("DoorOpen2", 0, 0.0f);
+                doorOpen = true;
+                doorName = "DoorOpen2";
 
+                return true;
 
-            return true;
+            }
+            if (doorRelative.z <= 0)
+            {
+                Debug.Log("Door clicked behind");
+                myDoor.Play("DoorOpen", 0, 0.0f);
+                doorOpen = true;
+                doorName = "DoorOpen";
+
+                return true;
+            }
+            else
+            {
+                Debug.Log("ERROR");
+                return true;
+            }
         }
         else
         {
-            myDoor.Play("DoorClose", 0, 0.0f);
+            if (doorName == "DoorOpen")
+            {
+                myDoor.Play("DoorClose", 0, 0.0f);
+            }
+            else
+            {
+                myDoor.Play("DoorClose2", 0, 0.0f);
+            }
             doorOpen = false;
 
             return true;
         }
     }
 }
+
