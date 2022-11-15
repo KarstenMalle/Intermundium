@@ -78,18 +78,13 @@ public class CondTriggerSFX : MonoBehaviour
         //Debug.Log(viewingAngleHori);
         //Debug.Log(viewingAngleVert);
         //checkViewingAngle(viewingAngleVert, viewingAngleHori);
-        /*
+        
         if (!spooped && checkViewingAngle(viewingAngleVert, viewingAngleHori)) {
             playSound.Play();
             spooped = !spooped;
             count++;
         }
-        */
-        if (checkViewingAngle(viewingAngleVert, viewingAngleHori)) {
-            playSound.Play();
-            spooped = true;
-            count++;
-        }
+        
     }
 }
 
