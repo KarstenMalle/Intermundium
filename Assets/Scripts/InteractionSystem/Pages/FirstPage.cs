@@ -43,12 +43,12 @@ public class FirstPage : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
+        canvas.SetActive(true);
         _ePressed = true;
-
         //Update();
 
         Debug.Log("U pressed the page2");
-        canvas.SetActive(true);
+        
 
         return true;
     }
