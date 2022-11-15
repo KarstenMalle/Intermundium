@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class Finish : MonoBehaviour
 {
-   private void OnTriggerEnter(Collider other)
-   {
-    if(other.gameObject.name == "First Person Controller")
+    public GameObject loadingScreen;
+
+    void Start()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        loadingScreen.SetActive(false);
     }
-   }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "First Person Controller")
+        {
+            //ADD LOADINGBAR SCENE
+        
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 }
