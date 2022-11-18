@@ -18,6 +18,9 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
     private GameObject player;
     public GameObject doorObject;
 
+    [SerializeField]
+    public AudioSource doorOpenSound, doorCloseSound, doorClickSound;
+
     //[SerializeField] private bool openTrigger = false;
 
     /*
@@ -79,6 +82,8 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
                 doorOpen = true;
                 doorName = "DoorOpen2";
 
+                doorOpenSound.Play();
+
                 return true;
 
             }
@@ -88,6 +93,8 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
                 myDoor.Play("DoorOpen", 0, 0.0f);
                 doorOpen = true;
                 doorName = "DoorOpen";
+
+                doorOpenSound.Play();
 
                 return true;
             }
@@ -102,10 +109,12 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
             if (doorName == "DoorOpen")
             {
                 myDoor.Play("DoorClose", 0, 0.0f);
+                doorCloseSound.Play();
             }
             else
             {
                 myDoor.Play("DoorClose2", 0, 0.0f);
+                doorCloseSound.Play();
             }
             doorOpen = false;
 
