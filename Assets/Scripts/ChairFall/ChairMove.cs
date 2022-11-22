@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,20 +24,34 @@ public class ChairMove : MonoBehaviour
     public Light[] lights1;
     public Light[] lights2;
 
+    private bool isTriggeredBox1 = false;
+    private bool isTriggeredBox2 = false;
+
+    IEnumerator sendMessage(string message, Func<bool> onSuccess)
+    {
+        yield return new WaitForSeconds(1);
+        //.........
+        //Send message algorithm
+        onSuccess(result);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "First Person Controller")
         {
-            if(gameObject.name == boxObject.name)
+            if(gameObject.name == boxObject.name && isTriggeredBox1 != true)
             {
-                
+
+                isTriggeredBox1 = true;
                 StartCoroutine(firstAnimationSet());
                 
 
             }
-            if (gameObject.name == box2Object.name)
+            if (gameObject.name == box2Object.name && isTriggeredBox2 != true)
             {
+                isTriggeredBox2 = true;
+                Debug.Log("WHAT THAT VALUE DO: " + isTriggeredBox2);
+                StopCoroutine(firstAnimationSet());
                 StartCoroutine(secondAnimationSet());
 
             }
@@ -74,22 +89,51 @@ public class ChairMove : MonoBehaviour
             yield return new WaitForSeconds((float)0.2);
         }
 
-        yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(2);
 
         rightChair.Play("ChairAir", 0, 0.0f);
         leftChair.Play("ChairAir", 0, 0.0f);
         middleChair1.Play("ChairAir", 0, 0.0f);
         middleChair2.Play("ChairAir", 0, 0.0f);
-        boxObject.SetActive(false);
 
-        foreach (Light x in lights1)
+        bool loopWhile = true;
+        bool tempBool = false;
+        while(loopWhile)
         {
-            x.intensity = 2;
+            Debug.Log(StartCoroutine(boolCheck()));
+            Debug.Log("WORK???: ");
+            foreach (Light x in lights1)
+            {
+                x.intensity = 2;
+            }
+            foreach (Light x in lights2)
+            {
+                x.intensity = 0;
+            }
+            yield return new WaitForSeconds((float)0.2);
+            foreach (Light x in lights1)
+            {
+                x.intensity = 0;
+            }
+            foreach (Light x in lights2)
+            {
+                x.intensity = 2;
+            }
+            yield return new WaitForSeconds((float)0.2);
+            if(tempBool == true)
+            {
+                Debug.Log("HELLO???: ");
+                boxObject.SetActive(false);
+                loopWhile = false;
+                break;
+            }
         }
-        foreach (Light x in lights2)
-        {
-            x.intensity = 0;
-        }
+        
+    }
+
+    IEnumerator boolCheck()
+    {
+        yield return isTriggeredBox2;
     }
 
     IEnumerator secondAnimationSet()
@@ -99,13 +143,26 @@ public class ChairMove : MonoBehaviour
         middleChair1.Play("ChairDown", 0, 0.0f);
         middleChair2.Play("ChairDown", 0, 0.0f);
 
-        foreach (Light x in lights1)
+        for (int i = 0; i < 2; i++)
         {
-            x.intensity = 0;
-        }
-        foreach (Light x in lights2)
-        {
-            x.intensity = 2;
+            foreach (Light x in lights1)
+            {
+                x.intensity = 0;
+            }
+            foreach (Light x in lights2)
+            {
+                x.intensity = 2;
+            }
+            yield return new WaitForSeconds((float)0.25);
+            foreach (Light x in lights1)
+            {
+                x.intensity = 2;
+            }
+            foreach (Light x in lights2)
+            {
+                x.intensity = 0;
+            }
+            yield return new WaitForSeconds((float)0.25);
         }
 
         yield return new WaitForSeconds(1);
