@@ -5,11 +5,11 @@ using UnityEngine;
 public class ToiletInteract : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _promt;
-    [SerializeField] private Animator myToilet = null;
+    [SerializeField] private Animator myAnimator = null;
 
     private bool isOpen;
     private GameObject player;
-    public GameObject doorObject;
+    public GameObject myObject;
     private bool _ePressed = false;
     public GameObject toolTip;
 
@@ -22,7 +22,7 @@ public class ToiletInteract : MonoBehaviour, IInteractable
 
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, doorObject.transform.position) < (2 * 1) && _ePressed == false)
+        if (Vector3.Distance(player.transform.position, myObject.transform.position) < (2 * 1) && _ePressed == false)
         {
             toolTip.SetActive(true);
         }
@@ -32,27 +32,37 @@ public class ToiletInteract : MonoBehaviour, IInteractable
         }
     }
 
+    private IEnumerator DoorOpenAnimation()
+    {
+        myAnimator.Play("DoorOpen", 0, 0.0f);
+        yield return new WaitForSeconds(1);
+        isOpen = true;
+    }
+
+    private IEnumerator DoorCloseAnimation()
+    {
+        myAnimator.Play("DoorClose", 0, 0.0f);
+        yield return new WaitForSeconds(1);
+        isOpen = false;
+    }
+
     public string InteractionPrompt => _promt;
 
     public bool Interact(Interactor interactor)
     {
         _ePressed = true;
-        Debug.Log("TOILET");
-        if (!isOpen)
-        {
-            myToilet.Play("DoorOpen", 0, 0.0f);
-            isOpen = true;
 
+        if (!isOpen && myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myAnimator.IsInTransition(0))
+        {
+            StartCoroutine(DoorOpenAnimation());
+            return true;
+        }
+        if (isOpen && myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myAnimator.IsInTransition(0))
+        {
+            StartCoroutine(DoorCloseAnimation());
             return true;
         }
 
-        if (isOpen)
-        {
-            myToilet.Play("DoorClose", 0, 0.0f);
-            isOpen = false;
-
-            return true;
-        }
         return true;
 
     }

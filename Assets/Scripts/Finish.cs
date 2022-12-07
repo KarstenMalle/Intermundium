@@ -21,6 +21,7 @@ public class Finish : MonoBehaviour
         if (other.gameObject.name == "First Person Controller")
         {
             Debug.Log("TEST Loading screen");
+            StopAllCoroutines();
             StartCoroutine(LoadAsynchronously(SceneManager.GetActiveScene().buildIndex + 1));
         }
     }

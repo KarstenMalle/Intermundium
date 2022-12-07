@@ -73,7 +73,7 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
     public bool Interact(Interactor interactor)
     {
         Vector3 doorRelative = doorObject.transform.InverseTransformPoint(player.transform.position);
-        if (!doorOpen)
+        if (!doorOpen && myDoor.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myDoor.IsInTransition(0))
         {
             if (doorRelative.z > 0)
             {
@@ -106,12 +106,12 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
         }
         else
         {
-            if (doorName == "DoorOpen")
+            if (doorName == "DoorOpen" && myDoor.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myDoor.IsInTransition(0))
             {
                 myDoor.Play("DoorClose", 0, 0.0f);
                 doorCloseSound.Play();
             }
-            else
+            else if (myDoor.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myDoor.IsInTransition(0))
             {
                 myDoor.Play("DoorClose2", 0, 0.0f);
                 doorCloseSound.Play();
