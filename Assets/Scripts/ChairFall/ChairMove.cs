@@ -17,7 +17,6 @@ public class ChairMove : MonoBehaviour
     [SerializeField] private Animator middleChair2;
 
     public GameObject boxObject;
-    public GameObject box2Object;
     public GameObject lightFlicker;
     public Light spotLight;
 
@@ -30,19 +29,8 @@ public class ChairMove : MonoBehaviour
         {
             if(gameObject.name == boxObject.name)
             {
-           
                 StartCoroutine(firstAnimationSet());
             }
-            if (gameObject.name == box2Object.name)
-            {
-                StopCoroutine(firstAnimationSet());
-                StartCoroutine(secondAnimationSet());
-                
-
-            }
-
-
-
         }
     }
 
@@ -70,11 +58,13 @@ public class ChairMove : MonoBehaviour
         leftChair.Play("ChairAir", 0, 0.0f);
         middleChair1.Play("ChairAir", 0, 0.0f);
         middleChair2.Play("ChairAir", 0, 0.0f);
-        boxObject.SetActive(false);
-    }
+        yield return new WaitForSeconds(1);
+        rightChair.Play("ChairAir", 0, 0.0f);
+        leftChair.Play("ChairAir", 0, 0.0f);
+        middleChair1.Play("ChairAir", 0, 0.0f);
+        middleChair2.Play("ChairAir", 0, 0.0f);
+        yield return new WaitForSeconds(1);
 
-    IEnumerator secondAnimationSet()
-    {
         rightChair.Play("ChairDrop", 0, 0.0f);
         leftChair.Play("ChairDown", 0, 0.0f);
         middleChair1.Play("ChairDown", 0, 0.0f);
@@ -100,9 +90,10 @@ public class ChairMove : MonoBehaviour
             x.intensity = 1;
         }
         spotLight.intensity = 1;
-        box2Object.SetActive(false);
-
+        boxObject.SetActive(false);
     }
+
+    
 
 }
 
