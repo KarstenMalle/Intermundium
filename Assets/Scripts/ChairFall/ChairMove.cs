@@ -23,6 +23,9 @@ public class ChairMove : MonoBehaviour
     public Light[] lights1;
     public Light[] lights2;
 
+    public AudioSource[] chairs;
+    public AudioSource spookSound;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "First Person Controller")
@@ -31,6 +34,14 @@ public class ChairMove : MonoBehaviour
             {
                 StartCoroutine(firstAnimationSet());
             }
+        }
+    }
+
+    private void chairAudio()
+    {
+        foreach(AudioSource x in chairs)
+        {
+            x.Play();
         }
     }
 
@@ -47,6 +58,8 @@ public class ChairMove : MonoBehaviour
         spotLight.intensity = 0;
         lightFlicker.SetActive(true);
 
+        Debug.Log("State 1");
+        spookSound.Play();
         rightChair.Play("ChairMove", 0, 0.0f);
         leftChair.Play("ChairUp", 0, 0.0f);
         middleChair1.Play("ChairUp", 0, 0.0f);
@@ -54,30 +67,37 @@ public class ChairMove : MonoBehaviour
         
         yield return new WaitForSeconds(1);
 
-        rightChair.Play("ChairAir", 0, 0.0f);
-        leftChair.Play("ChairAir", 0, 0.0f);
-        middleChair1.Play("ChairAir", 0, 0.0f);
-        middleChair2.Play("ChairAir", 0, 0.0f);
-        yield return new WaitForSeconds(1);
+        Debug.Log("State 2");
         rightChair.Play("ChairAir", 0, 0.0f);
         leftChair.Play("ChairAir", 0, 0.0f);
         middleChair1.Play("ChairAir", 0, 0.0f);
         middleChair2.Play("ChairAir", 0, 0.0f);
         yield return new WaitForSeconds(1);
 
+        Debug.Log("State 3");
+        rightChair.Play("ChairAir", 0, 0.0f);
+        leftChair.Play("ChairAir", 0, 0.0f);
+        middleChair1.Play("ChairAir", 0, 0.0f);
+        middleChair2.Play("ChairAir", 0, 0.0f);
+        yield return new WaitForSeconds(1);
+
+        Debug.Log("State 4");
         rightChair.Play("ChairDrop", 0, 0.0f);
         leftChair.Play("ChairDown", 0, 0.0f);
         middleChair1.Play("ChairDown", 0, 0.0f);
         middleChair2.Play("ChairDown", 0, 0.0f);
+        yield return new WaitForSeconds(0.7f);
 
-        yield return new WaitForSeconds(1);
-
+        Debug.Log("State 5");
+        chairAudio();
+        yield return new WaitForSeconds(0.3f);
         rightChair.Play("ChairBack", 0, 0.0f);
         leftChair.Play("ChairBack", 0, 0.0f);
         middleChair1.Play("ChairBack", 0, 0.0f);
         middleChair2.Play("ChairBack", 0, 0.0f);
 
         yield return new WaitForSeconds(1);
+        spookSound.Stop();
 
         lightFlicker.SetActive(false);
         //yield return new WaitForSeconds(1);

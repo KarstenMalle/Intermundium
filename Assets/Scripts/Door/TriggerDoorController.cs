@@ -56,6 +56,7 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
             {
 
                 Debug.Log("insert SLAM sound :)");
+                doorCloseSound.Play();
                 deltaT = 0;
                 if (doorName == "DoorOpen")
                 {
