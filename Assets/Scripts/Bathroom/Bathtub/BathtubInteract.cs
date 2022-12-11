@@ -13,6 +13,9 @@ public class BathtubInteract : MonoBehaviour, IInteractable
     private bool _ePressed = false;
     public GameObject toolTip;
 
+    [SerializeField]
+    public AudioSource faucetSound;
+
     void Start()
     {
         player = GameObject.Find("Capsule Mesh");
@@ -47,6 +50,7 @@ public class BathtubInteract : MonoBehaviour, IInteractable
 
         if (!isOpen && myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myAnimator.IsInTransition(0))
         {
+            faucetSound.Play();
             StartCoroutine(DoorOpenAnimation());
             return true;
         }

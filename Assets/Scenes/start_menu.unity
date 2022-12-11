@@ -4782,7 +4782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MyAudioSourse: {fileID: 1214033140}
-  m_Volume: 0
+  m_Volume: 1
 --- !u!82 &1214033140
 AudioSource:
   m_ObjectHideFlags: 0
