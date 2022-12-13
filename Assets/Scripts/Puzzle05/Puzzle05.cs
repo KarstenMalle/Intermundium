@@ -59,7 +59,7 @@ public class Puzzle05 : MonoBehaviour, IInteractable
                 {
                     string upperCase = userGuess.ToUpper();
                     userGuess = upperCase;
-                    if(userGuess == "LIMBO")
+                    if(userGuess == "1087")
                     {
                         Debug.Log("CORRECT, UNLOCK NEXT LEVEL");
                         nextLvlBlocker.SetActive(false);
@@ -120,7 +120,7 @@ public class Puzzle05 : MonoBehaviour, IInteractable
         
         //Update();
 
-        Debug.Log("U pressed the page2");
+        Debug.Log("U pressed the page5");
         
 
         return true;
