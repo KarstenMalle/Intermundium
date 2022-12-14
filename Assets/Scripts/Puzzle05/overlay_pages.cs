@@ -40,10 +40,7 @@ public class overlay_pages : MonoBehaviour
             else
             {
                 toolTip.SetActive(false);
-            }
-            
+            }   
         }
-
-        
     }
 }

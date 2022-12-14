@@ -28,6 +28,8 @@ public class Puzzle05 : MonoBehaviour, IInteractable
 
     [SerializeField] private GameObject canvas;
 
+    private string correctAnswer = "1087";
+
     void Start()
     {
         player = GameObject.Find("Capsule Mesh");
@@ -59,7 +61,7 @@ public class Puzzle05 : MonoBehaviour, IInteractable
                 {
                     string upperCase = userGuess.ToUpper();
                     userGuess = upperCase;
-                    if(userGuess == "1087")
+                    if(userGuess == correctAnswer)
                     {
                         Debug.Log("CORRECT, UNLOCK NEXT LEVEL");
                         nextLvlBlocker.SetActive(false);
@@ -68,9 +70,10 @@ public class Puzzle05 : MonoBehaviour, IInteractable
                         FirstPersonLook.sensitivity = tmp_sensitivity;
                         _ePressed = false;
                         canvas.SetActive(false);
+                        overlay_activation.entering_code = true;
                         wallDeco.SetActive(false);
                     }
-                    else if (userGuess != "LIMBO")
+                    else if (userGuess != correctAnswer)
                     {
                         Debug.Log("WRONG");
                     }
@@ -101,6 +104,7 @@ public class Puzzle05 : MonoBehaviour, IInteractable
         if (Input.GetKeyDown(KeyCode.Q))
         {
             canvas.SetActive(false);
+            overlay_activation.entering_code = false;
         }
     }
 
@@ -116,9 +120,8 @@ public class Puzzle05 : MonoBehaviour, IInteractable
             FirstPersonLook.sensitivity = 0f;
         }
         canvas.SetActive(true);
+        overlay_activation.entering_code = true;
         _ePressed = true;
-        
-        //Update();
 
         Debug.Log("U pressed the page5");
         

@@ -12,10 +12,12 @@ public class overlay_activation : MonoBehaviour
     private bool overlay_active = false;
     private bool just_pressed = false;
 
+    static public bool entering_code = false;
+
     // Update is called once per frame
     void Update()
     {
-        if (have_pages) {
+        if (have_pages && !entering_code) {
             if (Input.GetKeyDown(KeyCode.Alpha1) && !overlay_active) {
                 overlay[0].SetActive(true);
                 overlay_active = true;
