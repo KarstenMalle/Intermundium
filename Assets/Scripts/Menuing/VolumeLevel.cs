@@ -13,7 +13,7 @@ public class VolumeLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_MyAudioSourse.volume = MainMenu.VolumeLevel * m_Volume;
+        m_MyAudioSourse.volume = MainMenu.VolumeLevel * m_Volume * PauseMenu.mute;
     }
 
     // Update is called once per frame
@@ -21,11 +21,11 @@ public class VolumeLevel : MonoBehaviour
     {
         if (Options.VolumeValue == 0)
         {
-            m_MyAudioSourse.volume = MainMenu.VolumeLevel * m_Volume;
+            m_MyAudioSourse.volume = MainMenu.VolumeLevel * m_Volume * PauseMenu.mute;
         } 
         else
         {
-            m_MyAudioSourse.volume = Options.VolumeValue * m_Volume;
+            m_MyAudioSourse.volume = Options.VolumeValue * m_Volume * PauseMenu.mute;
         }
         //Debug.Log(m_MyAudioSourse.volume);
     }

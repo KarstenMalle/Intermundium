@@ -23,8 +23,6 @@ public class splashSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // log the number of particles in the system
-        Debug.Log(_parentParticleSystem.particleCount);
 
         // if the number of particles is fewer than previous frame, then play the sound
         if (_parentParticleSystem.particleCount < prevParticleCount)

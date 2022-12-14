@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class overlay_pages : MonoBehaviour
 {
     public GameObject toolTip;
+    public TextMeshPro toolTipText;
     private GameObject player;
 
     [SerializeField] private GameObject[] pages;
@@ -42,5 +44,10 @@ public class overlay_pages : MonoBehaviour
                 toolTip.SetActive(false);
             }   
         }
+
+        if (overlay_activation.have_pages) {
+            toolTipText.text = "Use 1, 2, 3, or 4 to look at pages";
+        }
+        
     }
 }
