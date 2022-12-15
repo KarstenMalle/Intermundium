@@ -72,6 +72,7 @@ public class Puzzle05 : MonoBehaviour, IInteractable
                         canvas.SetActive(false);
                         overlay_activation.entering_code = true;
                         wallDeco.SetActive(false);
+                        overlay_activation.have_pages = false;
                     }
                     else if (userGuess != correctAnswer)
                     {
