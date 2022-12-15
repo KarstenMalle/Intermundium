@@ -18,7 +18,7 @@ public class ChairMove : MonoBehaviour
 
     public GameObject boxObject;
     public GameObject lightFlicker;
-    public Light spotLight;
+    public GameObject spotLight;
 
     public Light[] lights1;
     public Light[] lights2;
@@ -55,7 +55,8 @@ public class ChairMove : MonoBehaviour
         {
             x.intensity = 0;
         }
-        spotLight.intensity = 0;
+        //spotLight.intensity = 0;
+        spotLight.SetActive(false);
         lightFlicker.SetActive(true);
 
         Debug.Log("State 1");
@@ -109,7 +110,8 @@ public class ChairMove : MonoBehaviour
         {
             x.intensity = 1;
         }
-        spotLight.intensity = 1;
+        //spotLight.intensity = 1;
+        spotLight.SetActive(true);
         boxObject.SetActive(false);
     }
 

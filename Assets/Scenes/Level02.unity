@@ -891,6 +891,24 @@ Transform:
   m_Father: {fileID: 1736883439}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &93833698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 192056, guid: 663177e7db344bd692306990641ca5e1, type: 3}
+  m_PrefabInstance: {fileID: 1977998993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &93833702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93833698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23a86971c67f9b43b856eb6a83112ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 1.5
 --- !u!1001 &96231672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23748,7 +23766,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5ffb88ac0ca275947a073224535092fa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -25832,7 +25850,7 @@ MonoBehaviour:
   middleChair2: {fileID: 869617209}
   boxObject: {fileID: 1554388179}
   lightFlicker: {fileID: 1705982548}
-  spotLight: {fileID: 521246056}
+  spotLight: {fileID: 521246053}
   lights1:
   - {fileID: 379077577}
   - {fileID: 882762997}
@@ -34893,7 +34911,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2150f4d6f6cb3c747821938afc358a19, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0e216327ebc4db942834d59e62118cd2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -36844,6 +36862,24 @@ Transform:
   m_Father: {fileID: 1155618321}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1924842692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138892, guid: f92572ee929e4eb7a01d7dfecc063a29, type: 3}
+  m_PrefabInstance: {fileID: 1925366538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1924842696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924842692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23a86971c67f9b43b856eb6a83112ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
 --- !u!1001 &1925366538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37597,6 +37633,14 @@ PrefabInstance:
     - target: {fileID: 401910, guid: 663177e7db344bd692306990641ca5e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492056, guid: 663177e7db344bd692306990641ca5e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2629
+      objectReference: {fileID: 0}
+    - target: {fileID: 492056, guid: 663177e7db344bd692306990641ca5e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2937
       objectReference: {fileID: 0}
     - target: {fileID: 57330169, guid: 663177e7db344bd692306990641ca5e1, type: 3}
       propertyPath: m_Version
