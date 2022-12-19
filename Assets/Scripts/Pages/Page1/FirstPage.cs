@@ -18,7 +18,7 @@ public class FirstPage : MonoBehaviour, IInteractable
     [SerializeField] private IntSO pagesSO;
     [SerializeField] public TextMeshProUGUI pagesText;
     [SerializeField] private GameObject pagesCanvas;
-    private bool pageCollected;
+    static public bool pageCollected;
 
     void Start()
     {
