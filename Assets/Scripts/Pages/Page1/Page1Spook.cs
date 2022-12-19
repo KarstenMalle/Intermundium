@@ -25,13 +25,13 @@ public class Page1Spook : MonoBehaviour
         if (FirstPage.pageCollected && !spooked) {
             monster.SetActive(true);
             if (!sound) {
-                Debug.Log("play sound");
+                //Debug.Log("play sound");
                 speaker.Play();
                 sound = true;
-                monster.SetActive(true);
+                monster.SetActive(true);    
             }
             if (view < 220) {
-                Debug.Log("vanish");
+                //Debug.Log("vanish");
                 monster.SetActive(false);
                 spooked = true;
             }
