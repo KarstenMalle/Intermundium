@@ -11,7 +11,8 @@ public class RandomEffectPlayer : MonoBehaviour
 
     private float time;
 
-    private float wait;
+    [Tooltip("Initial wait time in seconds")]
+    public float wait = 60f;
 
     public int max;
     public int min;
@@ -22,7 +23,6 @@ public class RandomEffectPlayer : MonoBehaviour
     void Start()
     {
         time = Time.time;
-        wait = rnd.Next(min, max+1);
     }
 
     // Update is called once per frame
