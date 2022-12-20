@@ -30086,7 +30086,7 @@ MonoBehaviour:
   - {fileID: 1164617509}
   - {fileID: 180745839}
   max: 30
-  min: 20
+  min: 15
 --- !u!4 &1710451563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4701803763420708, guid: 1b691256e59994840ba420ff5c8ce509, type: 3}
