@@ -55,8 +55,7 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
             if (deltaT > 20)
             {
 
-                //Debug.Log("insert SLAM sound :)");
-                doorCloseSound.Play();
+                Debug.Log("insert SLAM sound :)");
                 deltaT = 0;
                 if (doorName == "DoorOpen")
                 {
@@ -74,11 +73,11 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
     public bool Interact(Interactor interactor)
     {
         Vector3 doorRelative = doorObject.transform.InverseTransformPoint(player.transform.position);
-        if (!doorOpen && myDoor.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myDoor.IsInTransition(0))
+        if (!doorOpen)
         {
             if (doorRelative.z > 0)
             {
-                //Debug.Log("Door clicked infront");
+                Debug.Log("Door clicked infront");
                 myDoor.Play("DoorOpen2", 0, 0.0f);
                 doorOpen = true;
                 doorName = "DoorOpen2";
@@ -90,7 +89,7 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
             }
             if (doorRelative.z <= 0)
             {
-                //Debug.Log("Door clicked behind");
+                Debug.Log("Door clicked behind");
                 myDoor.Play("DoorOpen", 0, 0.0f);
                 doorOpen = true;
                 doorName = "DoorOpen";
@@ -107,12 +106,12 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
         }
         else
         {
-            if (doorName == "DoorOpen" && myDoor.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myDoor.IsInTransition(0))
+            if (doorName == "DoorOpen")
             {
                 myDoor.Play("DoorClose", 0, 0.0f);
                 doorCloseSound.Play();
             }
-            else if (myDoor.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !myDoor.IsInTransition(0))
+            else
             {
                 myDoor.Play("DoorClose2", 0, 0.0f);
                 doorCloseSound.Play();

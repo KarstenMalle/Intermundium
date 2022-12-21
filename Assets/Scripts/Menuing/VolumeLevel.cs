@@ -8,12 +8,12 @@ public class VolumeLevel : MonoBehaviour
     public AudioSource m_MyAudioSourse;
 
     [SerializeField]
-    public float m_Volume = 1f;
+    public float m_Volume;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_MyAudioSourse.volume = MainMenu.VolumeLevel * m_Volume * PauseMenu.mute;
+        m_MyAudioSourse.volume = MainMenu.VolumeLevel * m_Volume;
     }
 
     // Update is called once per frame
@@ -21,11 +21,11 @@ public class VolumeLevel : MonoBehaviour
     {
         if (Options.VolumeValue == 0)
         {
-            m_MyAudioSourse.volume = MainMenu.VolumeLevel * m_Volume * PauseMenu.mute;
+            m_MyAudioSourse.volume = MainMenu.VolumeLevel * m_Volume;
         } 
         else
         {
-            m_MyAudioSourse.volume = Options.VolumeValue * m_Volume * PauseMenu.mute;
+            m_MyAudioSourse.volume = Options.VolumeValue * m_Volume;
         }
         //Debug.Log(m_MyAudioSourse.volume);
     }

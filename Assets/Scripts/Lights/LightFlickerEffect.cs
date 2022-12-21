@@ -52,9 +52,6 @@ public class LightFlickerEffect : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.GameIsPaused)
-            return;
-            
         if (light == null)
             return;
 

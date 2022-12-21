@@ -11,6 +11,7 @@ public class FirstPersonLook : MonoBehaviour
     Vector2 velocity;
     Vector2 frameVelocity;
 
+
     void Reset()
     {
         // Get the character from the FirstPersonMovement in parents.
@@ -29,8 +30,6 @@ public class FirstPersonLook : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && PauseMenu.GameIsPaused) sensitivity = 0f;
-            
-
 
         // Get smooth velocity.
         Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));

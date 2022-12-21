@@ -46,22 +46,22 @@ public class CondTriggerSFX : MonoBehaviour
         ViewTargets t = vT[0];
 
         // Vertical check
-        if (between0_90(t.lowerLimit) && between270_360(t.upperLimit)) {
-            Vc = ((V >= t.upperLimit) || (V <= t.lowerLimit));
+        if (between0_90(t.floorAngle) && between270_360(t.ceilingAngle)) {
+            Vc = ((V >= t.ceilingAngle) || (V <= t.floorAngle));
         }
-        else if (between0_90(t.lowerLimit) && between0_90(t.upperLimit)) {
-            Vc = ((V <= t.lowerLimit) && (V >= t.upperLimit));
+        else if (between0_90(t.floorAngle) && between0_90(t.ceilingAngle)) {
+            Vc = ((V <= t.floorAngle) && (V >= t.ceilingAngle));
         }
-        else if (between270_360(t.lowerLimit) && between270_360(t.upperLimit)) {
-            Vc = ((V >= t.upperLimit) && (V <= t.lowerLimit));
+        else if (between270_360(t.floorAngle) && between270_360(t.ceilingAngle)) {
+            Vc = ((V >= t.ceilingAngle) && (V <= t.floorAngle));
         }
 
         // Horizontal check
-        if (t.leftLimit < t.rightLimit) {
-            Hc = ((t.leftLimit <= H) && (H <= t.rightLimit));
+        if (t.leftAngle < t.rightAngle) {
+            Hc = ((t.leftAngle <= H) && (H <= t.rightAngle));
         }
-        else if (t.leftLimit > t.rightLimit) {
-            Hc = !((t.rightLimit <= H) && (H <= t.leftLimit));
+        else if (t.leftAngle > t.rightAngle) {
+            Hc = !((t.rightAngle <= H) && (H <= t.leftAngle));
         }
 
         Debug.Log(string.Format("Hc = {0}", Hc));
@@ -88,16 +88,15 @@ public class CondTriggerSFX : MonoBehaviour
     }
 }
 
-[System.Serializable] 
+[System.Serializable]
 public class ViewTargets
 {
-    [Tooltip("Upper Limit must be above Lower Limit. Left Limit must be to the left of Right Limit")]
-    public int upperLimit, lowerLimit, leftLimit, rightLimit;
-    //lowerLimit: 90 is looking at floor and looking up decreases value to 0
-    //upperLimit: 270 us looking at ceiling and looking down increases value to 360
-    //in case of both being between 270-360: upperLimit > lowerLimit
-    //in case of both being between 0-90: upperLimit < lowerLimit
-    //leftLimit < rightLimit, ie. leftLimit must be counterclock-wise in relation to rightLimit
+    public int ceilingAngle, floorAngle, leftAngle, rightAngle;
+    //floorAngle: 90 is looking at floor and looking up decreases value to 0
+    //ceilingAngle: 270 us looking at ceiling and looking down increases value to 360
+    //in case of both being between 270-360: ceilingAngle > floorAngle
+    //in case of both being between 0-90: ceilingAngle < floorAngle
+    //leftAngle < rightAngle, ie. leftAngle must be counterclock-wise in relation to rightAngle
 }
 
 /* USAGE GUIDE
@@ -106,7 +105,7 @@ public class ViewTargets
  * 3. Create cube that acts as a trigger
  * 4. Add this script to the cube
  * 5. Open dropdown menu VT (viewing targets)
- * 6. Use "Viewing angle hori" and "Viewing angle vert" to determine direction that player should be looking.
+ * 6. Use "Viewing angle hori" and "Viewing angle vert" to determine direction that player should be moving.
  * 7. Drag the speaker cube from the hiararchy to "Play Sound" under the script.
  * obs. make sure to add VolumeLevel script to any audio source
  */

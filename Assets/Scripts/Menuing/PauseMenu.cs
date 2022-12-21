@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,8 +9,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
 
     float tmp_sensitivity = 0f;
-
-    public static float mute = 1f;
 
     // Update is called once per frame
     void Update()
@@ -41,7 +38,6 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         FirstPersonLook.sensitivity = tmp_sensitivity;
         GameIsPaused = false;
-        mute = 1f;
     }
 
     public void Pause()
@@ -52,7 +48,6 @@ public class PauseMenu : MonoBehaviour
         tmp_sensitivity = FirstPersonLook.sensitivity;
         FirstPersonLook.sensitivity = 0f;
         GameIsPaused = true;
-        mute = 0f;
     }
 
     public void QuitGame()
@@ -63,10 +58,5 @@ public class PauseMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false; 
         #endif
         Application.Quit();
-    }
-
-    public void gotoMainMenu()
-    {
-        SceneManager.LoadScene(0);
     }
 }
