@@ -6,7 +6,6 @@ TagManager:
   tags:
   - LivingRoomLights
   - Inspect_GUI
-  - ChessCamera
   layers:
   - Default
   - TransparentFX
@@ -17,9 +16,9 @@ TagManager:
   - 
   - 
   - Interactable
-  - ChessPuzzle
-  - ChessTiles
-  - Hover
+  - 
+  - 
+  - 
   - 
   - 
   - 
