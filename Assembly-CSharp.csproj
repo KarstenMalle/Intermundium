@@ -67,7 +67,6 @@
     <Compile Include="Assets\Scripts\InsctructionLevelLoad.cs" />
     <Compile Include="Assets\Scripts\Lights\LightFlickerEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\Scripts\Pages\Page1\FirstPageCanvas.cs" />
     <Compile Include="Assets\Scripts\InteractionSystem\IInteractable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Puzzle05\overlay_pages.cs" />
@@ -171,6 +170,15 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\Lights\LightFlickerEffectMultiple.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\GroundCheck.cs" />
+    <Compile Include="Assets\Scripts\Pages\Page1\Page1Spook.cs" />
+    <Compile Include="Assets\Scripts\ToolTips\ToolTip.cs" />
+    <Compile Include="Assets\Scripts\SFXtriggers\TimedSpook.cs" />
+    <Compile Include="Assets\Scripts\SFXtriggers\RotatingSound.cs" />
+    <Compile Include="Assets\Scripts\SFXtriggers\triggerJumpScare.cs" />
+    <Compile Include="Assets\Scripts\Pages\Page3\ThirdPage.cs" />
+    <Compile Include="Assets\Scripts\SFXtriggers\MonsterScript4.cs" />
+    <Compile Include="Assets\Scripts\SFXtriggers\RandomEffectPlayer.cs" />
+    <Compile Include="Assets\Scripts\Ambiance\AmbianceControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -193,10 +201,12 @@
     <None Include="Assets\Models\HorrorEnvironmentPack\!!! INSTALLING TUTORIAL !!!.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\AlchemyLabProps\Readme.txt" />
+    <None Include="Assets\Hovl Studio\Procedural fire\Shaders\FireSphere.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Hovl Studio\Procedural fire\Demo scene\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
   </ItemGroup>

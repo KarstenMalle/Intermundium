@@ -293,7 +293,7 @@ public class InspectEngine : MonoBehaviour
         //instansiate object for UI visibility. and ensure only a single observable object can be used.
         //inspect_gameobject = objectHit.transform.gameObject;
         //ScriptableObject inspect_gameobject_values = inspect_gameobject.GetComponent<ScriptableObject>();
-        
+
         PauseGame();
 
         Debug.Log("start observing");
@@ -305,7 +305,7 @@ public class InspectEngine : MonoBehaviour
         ShowMouseCursor();
 
         //Creating the observable object as an instantiated object
-        inst_inspect_object = Instantiate(inspect_gameobject, Inspect_UI.transform.position, transform.rotation);
+        inst_inspect_object = Instantiate(inspect_gameobject, Inspect_UI.transform.position, transform.rotation) as GameObject;
 
         Debug.Log(inst_inspect_object);
 
