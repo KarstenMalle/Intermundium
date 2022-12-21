@@ -7,7 +7,7 @@ public class VolumeLevel : MonoBehaviour
 
     public AudioSource m_MyAudioSourse;
 
-    [SerializeField] [Tooltip("Manual volume level adjustment if needed.")]
+    [SerializeField]
     public float m_Volume = 1f;
 
     // Start is called before the first frame update

@@ -18,7 +18,7 @@ public class FirstPage : MonoBehaviour, IInteractable
     [SerializeField] private IntSO pagesSO;
     [SerializeField] public TextMeshProUGUI pagesText;
     [SerializeField] private GameObject pagesCanvas;
-    static public bool pageCollected;
+    private bool pageCollected;
 
     void Start()
     {
@@ -48,25 +48,11 @@ public class FirstPage : MonoBehaviour, IInteractable
         {
             pagesSO.Value += 1;
             pagesText.text = pagesSO.Value + "/5";
+         
             pagesCanvas.SetActive(true);
             pageCollected = true;
         }
     }
-
-    /*
-    void OnGUI()
-    {
-        GUI.Label(new Rect(Screen.width - pagesText.text.Length, 10, pagesText.text.Length, 22), pagesText.text);
-    }
-    
-
-    void OnGUI()
-    {
-        GUIStyle style = new GUIStyle();
-        style.fontSize = (int)(20.0f * ((float)Screen.width / (float)nativeSize.x));
-        GUI.Label(new Rect(Screen.width - 40, 10, 200, 200), pagesText.text, style);
-    }
-    */
 
     public string InteractionPrompt => _promt;
 

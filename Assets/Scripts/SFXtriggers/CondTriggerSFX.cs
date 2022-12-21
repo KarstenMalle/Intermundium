@@ -72,18 +72,19 @@ public class CondTriggerSFX : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+
+        viewingAngleHori = Camera.main.transform.eulerAngles.y; // H
+        viewingAngleVert = Camera.main.transform.eulerAngles.x; // V
+        //Debug.Log(viewingAngleHori);
+        //Debug.Log(viewingAngleVert);
         //checkViewingAngle(viewingAngleVert, viewingAngleHori);
-        if (!spooped) {
-            viewingAngleHori = Camera.main.transform.eulerAngles.y; // H
-            viewingAngleVert = Camera.main.transform.eulerAngles.x; // V
-            Debug.Log("viewingAngleHori:" + viewingAngleHori);
-            Debug.Log("viewingAngleVert:" + viewingAngleVert);
-            if (checkViewingAngle(viewingAngleVert, viewingAngleHori)) {
-                playSound.Play();
-                spooped = !spooped;
-                count++;
-            }
+        
+        if (!spooped && checkViewingAngle(viewingAngleVert, viewingAngleHori)) {
+            playSound.Play();
+            spooped = !spooped;
+            count++;
         }
+        
     }
 }
 
