@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0
+  m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
@@ -2047,7 +2047,6 @@ MonoBehaviour:
   - {fileID: 1431462043}
   - {fileID: 226178232}
   - {fileID: 1755094283}
-  wait: 60
   max: 30
   min: 15
 --- !u!1001 &222574973
