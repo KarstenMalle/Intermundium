@@ -6,13 +6,16 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-
-    public GameObject PauseMenuUI;
+    public GameObject PauseCanvas;
 
     float tmp_sensitivity = 0f;
 
     public static float mute = 1f;
 
+    void Start()
+    {
+        PauseCanvas.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -36,7 +39,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        PauseMenuUI.SetActive(false);
+        PauseCanvas.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         FirstPersonLook.sensitivity = tmp_sensitivity;
@@ -46,7 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        PauseMenuUI.SetActive(true);
+        PauseCanvas.SetActive(true);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.Confined;
         tmp_sensitivity = FirstPersonLook.sensitivity;
