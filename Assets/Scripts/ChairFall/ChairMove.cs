@@ -17,12 +17,14 @@ public class ChairMove : MonoBehaviour
     [SerializeField] private Animator middleChair2;
 
     public GameObject boxObject;
-    public GameObject box2Object;
     public GameObject lightFlicker;
-    public Light spotLight;
+    public GameObject spotLight;
 
     public Light[] lights1;
     public Light[] lights2;
+
+    public AudioSource[] chairs;
+    public AudioSource spookSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,19 +32,16 @@ public class ChairMove : MonoBehaviour
         {
             if(gameObject.name == boxObject.name)
             {
-           
                 StartCoroutine(firstAnimationSet());
             }
-            if (gameObject.name == box2Object.name)
-            {
-                StopCoroutine(firstAnimationSet());
-                StartCoroutine(secondAnimationSet());
-                
+        }
+    }
 
-            }
-
-
-
+    private void chairAudio()
+    {
+        foreach(AudioSource x in chairs)
+        {
+            x.Play();
         }
     }
 
@@ -56,9 +55,12 @@ public class ChairMove : MonoBehaviour
         {
             x.intensity = 0;
         }
-        spotLight.intensity = 0;
+        //spotLight.intensity = 0;
+        spotLight.SetActive(false);
         lightFlicker.SetActive(true);
 
+        Debug.Log("State 1");
+        spookSound.Play();
         rightChair.Play("ChairMove", 0, 0.0f);
         leftChair.Play("ChairUp", 0, 0.0f);
         middleChair1.Play("ChairUp", 0, 0.0f);
@@ -66,28 +68,37 @@ public class ChairMove : MonoBehaviour
         
         yield return new WaitForSeconds(1);
 
+        Debug.Log("State 2");
         rightChair.Play("ChairAir", 0, 0.0f);
         leftChair.Play("ChairAir", 0, 0.0f);
         middleChair1.Play("ChairAir", 0, 0.0f);
         middleChair2.Play("ChairAir", 0, 0.0f);
-        boxObject.SetActive(false);
-    }
+        yield return new WaitForSeconds(1);
 
-    IEnumerator secondAnimationSet()
-    {
+        Debug.Log("State 3");
+        rightChair.Play("ChairAir", 0, 0.0f);
+        leftChair.Play("ChairAir", 0, 0.0f);
+        middleChair1.Play("ChairAir", 0, 0.0f);
+        middleChair2.Play("ChairAir", 0, 0.0f);
+        yield return new WaitForSeconds(1);
+
+        Debug.Log("State 4");
         rightChair.Play("ChairDrop", 0, 0.0f);
         leftChair.Play("ChairDown", 0, 0.0f);
         middleChair1.Play("ChairDown", 0, 0.0f);
         middleChair2.Play("ChairDown", 0, 0.0f);
+        yield return new WaitForSeconds(0.7f);
 
-        yield return new WaitForSeconds(1);
-
+        Debug.Log("State 5");
+        chairAudio();
+        yield return new WaitForSeconds(0.3f);
         rightChair.Play("ChairBack", 0, 0.0f);
         leftChair.Play("ChairBack", 0, 0.0f);
         middleChair1.Play("ChairBack", 0, 0.0f);
         middleChair2.Play("ChairBack", 0, 0.0f);
 
         yield return new WaitForSeconds(1);
+        spookSound.Stop();
 
         lightFlicker.SetActive(false);
         //yield return new WaitForSeconds(1);
@@ -99,10 +110,12 @@ public class ChairMove : MonoBehaviour
         {
             x.intensity = 1;
         }
-        spotLight.intensity = 1;
-        box2Object.SetActive(false);
-
+        //spotLight.intensity = 1;
+        spotLight.SetActive(true);
+        boxObject.SetActive(false);
     }
+
+    
 
 }
 

@@ -24,6 +24,7 @@ public class InsctructionLevelLoad : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            StopAllCoroutines();
             StartCoroutine(LoadAsynchronously(SceneManager.GetActiveScene().buildIndex + 1));
         }
     }
