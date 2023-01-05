@@ -14,6 +14,7 @@ public class ShelfInteract : MonoBehaviour, IInteractable
     private bool _ePressed = false;
     public GameObject toolTip;
 
+    public GameObject page3Object;
 
     [SerializeField]
     public AudioSource doorOpenSound, doorCloseSound;
@@ -23,6 +24,7 @@ public class ShelfInteract : MonoBehaviour, IInteractable
         player = GameObject.Find("Capsule Mesh");
         isOpen = false;
         toolTip.SetActive(false);
+        page3Object.SetActive(false);
     }
 
     void Update()
@@ -39,6 +41,7 @@ public class ShelfInteract : MonoBehaviour, IInteractable
 
     private IEnumerator DoorOpenAnimation()
     {
+        page3Object.SetActive(true);
         myAnimator.Play("DoorOpen", 0, 0.0f);
         yield return new WaitForSeconds(1);
         isOpen = true;
@@ -49,6 +52,7 @@ public class ShelfInteract : MonoBehaviour, IInteractable
         myAnimator.Play("DoorClose", 0, 0.0f);
         yield return new WaitForSeconds(1);
         isOpen = false;
+        page3Object.SetActive(false);
     }
 
     public string InteractionPrompt => _promt;
