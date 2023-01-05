@@ -240,8 +240,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\UnityThreadWaiter.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\CreatedOrganizationPanel.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\Progress\DrawProgressForMigration.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\Diff\DiffPanel.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\Welcome\DownloadAndInstallOperation.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\Diff\DiffPanel.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\CheckinMergeNeededDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesTab.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\UnityIncomingChangesTree.cs" />
