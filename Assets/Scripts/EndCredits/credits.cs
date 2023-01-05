@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class credits : MonoBehaviour
 {
 
     [SerializeField] private Animator animator;
+    [SerializeField] private IntSO pagesSO;
+    [SerializeField] public TextMeshProUGUI pagesText;
 
     void Start()
     {
-        animator.Play("CreditAnimation");    
+        pagesText.text = "Thanks for playing!\n" + "You have collected\n" + pagesSO.Value + "/5 pages.";
+        animator.Play("CreditAnimation");
     }
 
     private void Update()

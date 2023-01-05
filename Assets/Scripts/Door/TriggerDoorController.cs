@@ -21,23 +21,6 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
     [SerializeField]
     public AudioSource doorOpenSound, doorCloseSound, doorClickSound;
 
-    //[SerializeField] private bool openTrigger = false;
-
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            if (openTrigger)
-            {
-                Debug.Log("DAMN");
-                myDoor.Play("OpenDoor", 0, 0.0f);
-                gameObject.SetActive(false);
-                Debug.Log("YEET");
-            }
-        }
-    }
-    */
     void Start()
     {
         player = GameObject.Find("Capsule Mesh");
@@ -45,17 +28,12 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
 
     void Update()
     {
-        //Vector3 doorRelative = doorObject.transform.InverseTransformPoint(player.transform.position);
-
-        //Debug.Log(Vector3.Distance(doorRelative, player.transform.position));
 
         if (doorOpen)
         {
             deltaT += Time.deltaTime;
             if (deltaT > 20)
             {
-
-                //Debug.Log("insert SLAM sound :)");
                 doorCloseSound.Play();
                 deltaT = 0;
                 if (doorName == "DoorOpen")

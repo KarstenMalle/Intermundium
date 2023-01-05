@@ -23,6 +23,7 @@ public class ThirdPage : MonoBehaviour, IInteractable
         canvas.SetActive(false);
         pagesCanvas.SetActive(false);
         pageCollected = false;
+        pageObject.SetActive(true);
     }
 
     void Update()
@@ -30,6 +31,7 @@ public class ThirdPage : MonoBehaviour, IInteractable
         if (Input.GetKeyDown(KeyCode.Q))
         {
             canvas.SetActive(false);
+            pageObject.SetActive(false);
         }
         if (_ePressed && !pageCollected)
         {

@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Level.unity
     guid: 21856c4c1773bf840b629030922a6b36
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: 02a20675de8b9d542bd83e4037fb25b3
+  - enabled: 1
+    path: Assets/Scenes/EndCredits.unity
+    guid: bb3b5a00d4bd7c649b58d1574ba52d2f
   m_configObjects: {}
