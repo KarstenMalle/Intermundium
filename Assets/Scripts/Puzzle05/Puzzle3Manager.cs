@@ -14,8 +14,9 @@ public class Puzzle3Manager : MonoBehaviour
     [SerializeField] private Camera MainCamera;
     [SerializeField] private Camera ChessCamera;
     [SerializeField] private VideoPlayer VidPlayer;
-    [SerializeField] private GameObject NextLvlWall;
-    
+    [SerializeField] private GameObject NewDoor;
+    [SerializeField] private GameObject OldDoor;
+
     [SerializeField] private VideoClip[] PuzzleClips;
     [SerializeField] private GameObject ChessManager;
     [SerializeField] private float CameraTransitionSpeed;
@@ -27,12 +28,18 @@ public class Puzzle3Manager : MonoBehaviour
     private float tmp_sensitivity;
 
     //5 solution positions, 2 values x and y, with both a true or false value to confirm solution.
-    private int[,,] Solutions = new int[4, 2, 3]
-    {
-        { { 0, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type ,true/false) (y, chesspiece type, true/false)
-        { { 1, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
-        { { 2, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
-        { { 3, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
+    private int[,,] Solutions = new int[4, 2, 3]{
+        //Dronning A4
+        { { 0, 5, 0}, { 3, 5, 0} }, //(x, chesspiece type ,true/false) (y, chesspiece type, true/false)
+        
+        //bøner F4
+        { { 5, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
+        
+        //Konge C1
+        { { 2, 6, 0}, { 0, 6, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
+        
+        //Dronning A7
+        { { 0, 5, 0}, { 6, 5, 0} } //(x, chesspiece type, true/false) (y, chesspiece type, true/false) 
         //{ { 4, 1, 0}, { 3, 1, 0} }  //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
     };
 
@@ -40,7 +47,8 @@ public class Puzzle3Manager : MonoBehaviour
 
     private void Awake()
     {
-
+        OldDoor.SetActive(true);
+        NewDoor.SetActive(false);
         chessBoardManager = ChessManager.GetComponent<ChessBoardManager>();
         VidPlayer.isLooping = true;
 
@@ -77,7 +85,7 @@ public class Puzzle3Manager : MonoBehaviour
                 chessBoardManager.ChessCamera.enabled = true;
 
                 chessBoardManager.SetEnableMoves(true);
-            }else if(Input.GetKeyDown(KeyCode.E) && PlayingChess == true)
+            }else if(Input.GetKeyDown(KeyCode.Q) && PlayingChess == true)
             {
                 PlayingChess = false;
                 Debug.Log("Stop Playing Chess");
@@ -214,7 +222,8 @@ public class Puzzle3Manager : MonoBehaviour
         if (isItSolved)
         {
             Debug.Log(isItSolved);
-            NextLvlWall.SetActive(false);
+            OldDoor.SetActive(false);
+            NewDoor.SetActive(true);
             return;
         }
     }
