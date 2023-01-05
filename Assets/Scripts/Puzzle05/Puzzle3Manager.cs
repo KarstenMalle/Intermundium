@@ -29,18 +29,10 @@ public class Puzzle3Manager : MonoBehaviour
     //5 solution positions, 2 values x and y, with both a true or false value to confirm solution.
     private int[,,] Solutions = new int[4, 2, 3]
     {
-        //Dronning A4
-        { { 0, 5, 0}, { 3, 5, 0} }, //(x, chesspiece type ,true/false) (y, chesspiece type, true/false)
-        
-        //bøner F4
-        { { 5, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
-        
-        //Konge C1
-        { { 2, 6, 0}, { 0, 6, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
-        
-        //Dronning A7
-        { { 0, 5, 0}, { 6, 5, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
-
+        { { 0, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type ,true/false) (y, chesspiece type, true/false)
+        { { 1, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
+        { { 2, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
+        { { 3, 1, 0}, { 3, 1, 0} }, //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
         //{ { 4, 1, 0}, { 3, 1, 0} }  //(x, chesspiece type, true/false) (y, chesspiece type, true/false)
     };
 
@@ -71,7 +63,7 @@ public class Puzzle3Manager : MonoBehaviour
         if(Physics.Raycast(Raycast, out raycastHit, 5, LayerMask.GetMask("ChessPuzzle"))){
 
             //Debug.Log("Raycasting to find chesspuzzle");
-            //Debug.Log(raycastHit.transform.parent.name);
+            Debug.Log(raycastHit.transform.parent.name);
 
             if (PlayingChess == false && Input.GetKeyDown(KeyCode.E)) //&& raycastHit.transform.GetChild(1).name == "ChessBoard"
             {
@@ -165,7 +157,7 @@ public class Puzzle3Manager : MonoBehaviour
             
             //Debug.Log( (Solutions[0, 0, 2], Solutions[0, 1, 2] ));
             
-            Debug.Log("Playing first video hint");
+            //Debug.Log("Playing first video hint");
             VidPlayer.clip = PuzzleClips[0];
             VidPlayer.Play();
         }
