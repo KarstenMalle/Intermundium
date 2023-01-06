@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Puzzle03\overlay_pages.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_demo_v1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Puzzle05\Chess_Game\ChessPieces.cs" />
     <Compile Include="Assets\Scripts\Interact_Mechanic\InteractableClasses\AudioInteractable.cs" />
@@ -134,6 +135,8 @@
     <Compile Include="Assets\Scripts\Pages\PagesCollected\resetPages.cs" />
     <Compile Include="Assets\Scripts\Interact_Mechanic\RotatorNZoomer.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\FirstPersonAudio.cs" />
+    <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_mouselook_v1.cs" />
+    <Compile Include="Assets\Scripts\GoodEnding\GoodEnding.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Scripts\Interact_Mechanic\InteractableObjects\PickupPaper.cs" />
     <Compile Include="Assets\Scripts\Bathroom\Bathtub\BathtubInteract.cs" />
@@ -166,6 +169,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Interact_Mechanic\ObservableObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Scripts\Final Level\GoodOrBadEnding.cs" />
     <Compile Include="Assets\Scripts\Puzzle05\Chess_Game\ChessPieces\Bishop.cs" />
     <Compile Include="Assets\Scripts\Interact_Mechanic\ScriptableObjectInspectManager.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\Jump.cs" />
@@ -187,10 +191,6 @@
     <Compile Include="Assets\Scripts\SFXtriggers\RandomEffectPlayer.cs" />
     <Compile Include="Assets\Scripts\Lights\LightFlickerEffectMultiple.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\GroundCheck.cs" />
-    <Compile Include="Assets\Scripts\Final Level\GoodOrBadEnding.cs" />
-    <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_mouselook_v1.cs" />
-    <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_demo_v1.cs" />
-    <Compile Include="Assets\Scripts\GoodEnding\GoodEnding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

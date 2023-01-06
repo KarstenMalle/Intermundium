@@ -23,6 +23,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void LoadCreditScene()
+    {
+        SceneManager.LoadScene("EndCredits");
+    }
+
     public void QuitGame ()
     {
         Debug.Log("Quit");
