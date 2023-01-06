@@ -7143,7 +7143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: INTERMUNDIUM
+  m_text: Intermundium
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0bb6410395671c41bad5c37c0760a7b, type: 2}
   m_sharedMaterial: {fileID: -7527076099921634811, guid: a0bb6410395671c41bad5c37c0760a7b, type: 2}
