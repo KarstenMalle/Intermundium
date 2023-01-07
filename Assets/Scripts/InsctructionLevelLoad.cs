@@ -37,9 +37,10 @@ public class InsctructionLevelLoad : MonoBehaviour
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
-            Debug.Log(progress);
+            int rounded_progress = (int)Mathf.Round(progress);
+            Debug.Log(progress + rounded_progress);
             slider.value = progress;
-            progressText.text = progress * 100f + "%";
+            progressText.text = rounded_progress * 100f + "%";
    
             yield return null;
         }
