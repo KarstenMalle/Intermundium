@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Lights\LightFlickerEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\InteractionSystem\IInteractable.cs" />
+    <Compile Include="Assets\Scripts\Menuing\DontDestroyMe.cs" />
     <Compile Include="Assets\Scripts\SFXtriggers\TimedSpook.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Puzzle03\overlay_pages.cs" />
@@ -92,8 +93,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Menuing\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Ambiance\DontDestroySpeakerEnding.cs" />
     <Compile Include="Assets\Scripts\SFXtriggers\CubeBegone.cs" />
     <Compile Include="Assets\Scripts\Interact_Mechanic\Interactable.cs" />
+    <Compile Include="Assets\Scripts\Ambiance\DontDestroyAmbience.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\Puzzle02\Puzzle02Canvas.cs" />
     <Compile Include="Assets\Scripts\InteractionSystem\InspectRotation.cs" />

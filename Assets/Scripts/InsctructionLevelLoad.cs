@@ -13,7 +13,8 @@ public class InsctructionLevelLoad : MonoBehaviour
     public GameObject loadingScreen;
     public Slider slider;
     public TextMeshProUGUI progressText;
-    
+    private float fakeProgress = 0;
+
 
     private void Start()
     {
