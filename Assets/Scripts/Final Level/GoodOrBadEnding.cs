@@ -13,11 +13,19 @@ public class GoodOrBadEnding : MonoBehaviour, IInteractable
     [SerializeField] private GameObject DarkPlaneObject;
     [SerializeField] private IntSO pagesSO;
 
+    [SerializeField] private GameObject endingSpeaker;
+
     private float deltaT = 0;
+
+    //private GameObject endingSpeaker;
+    private GameObject backgroundMusic;
+    private bool changedSpeakers = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        //endingSpeaker = GameObject.FindGameObjectWithTag("EndingMusic");
+        backgroundMusic = GameObject.FindGameObjectWithTag("BackgroundMusic");
         BadEndingObject.SetActive(false);
         WhitePlaneObject.SetActive(true);
         DarkPlaneObject.SetActive(false);
@@ -43,9 +51,17 @@ public class GoodOrBadEnding : MonoBehaviour, IInteractable
                 WhitePlaneObject.SetActive(false);
                 DarkPlaneObject.SetActive(true);
                 BadEndingObject.SetActive(true);
+                endingSpeaker.SetActive(true);
+
+                if (!changedSpeakers)
+                {
+                    speakers();
+                    changedSpeakers = true;
+                }
             }
             if (deltaT > 8 && pagesSO.Value != 5)
             {
+                Debug.Log("CREDITS");
                 SceneManager.LoadScene("EndCredits");
             }
         }
@@ -63,5 +79,10 @@ public class GoodOrBadEnding : MonoBehaviour, IInteractable
 
 
         return true;
+    }
+
+    private void speakers() {
+        Destroy(backgroundMusic);
+        DontDestroyOnLoad(endingSpeaker);
     }
 }

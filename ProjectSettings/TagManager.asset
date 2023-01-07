@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LivingRoomLights
   - ChessCamera
+  - BackgroundMusic
+  - EndingMusic
   layers:
   - Default
   - TransparentFX

@@ -17629,6 +17629,10 @@ MonoBehaviour:
   loadingScreen: {fileID: 1316280911}
   slider: {fileID: 1614047792}
   progressText: {fileID: 1027879054}
+  firstPersonCam: {fileID: 1581505239}
+  loadingScreenCam: {fileID: 0}
+  loadingScreenParent: {fileID: 0}
+  bgImageList: []
 --- !u!65 &834166989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22355,6 +22359,10 @@ MonoBehaviour:
   loadingScreen: {fileID: 0}
   slider: {fileID: 0}
   progressText: {fileID: 0}
+  firstPersonCam: {fileID: 0}
+  loadingScreenCam: {fileID: 0}
+  loadingScreenParent: {fileID: 0}
+  bgImageList: []
 --- !u!65 &1096035490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28524,6 +28532,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578642652}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!20 &1581505239 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20437472682476688, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+  m_PrefabInstance: {fileID: 279382129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1587129563
 GameObject:
   m_ObjectHideFlags: 0
@@ -35954,7 +35967,7 @@ Transform:
   m_GameObject: {fileID: 1770815197}
   m_LocalRotation: {x: 0.27563733, y: 0, z: 0, w: 0.96126175}
   m_LocalPosition: {x: 0, y: 0.4652164, z: 1.6249619}
-  m_LocalScale: {x: 6, y: 1, z: 12}
+  m_LocalScale: {x: 6, y: 1, z: 18.548971}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1736883439}
