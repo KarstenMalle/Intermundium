@@ -14,6 +14,7 @@ public class CassettePlayerNew : MonoBehaviour, IInteractable
     public GameObject cassetteObject;
     public GameObject bookObject;
     public GameObject bathtubObject;
+    public GameObject cassette4Object;
 
     [SerializeField] private IntSO cassettesSO;
     private bool cassettesReady = false;
@@ -64,6 +65,7 @@ public class CassettePlayerNew : MonoBehaviour, IInteractable
                 bathtubObject.SetActive(false);
                 cassette3Sound.Play();
                 cassettesReady = false;
+                
             }
             else if (cassettesSO.Value == 4)
             {

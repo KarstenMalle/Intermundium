@@ -27,8 +27,8 @@ public class Puzzle3Manager : MonoBehaviour
     private bool isItSolved = false;
     private float tmp_sensitivity;
 
-    public GameObject main_door_old;
-    public GameObject main_door_new;
+    //public GameObject main_door_old;
+    //public GameObject main_door_new;
     public GameObject spook;
 
     //5 solution positions, 2 values x and y, with both a true or false value to confirm solution.
@@ -228,8 +228,8 @@ public class Puzzle3Manager : MonoBehaviour
             Debug.Log(isItSolved);
             OldDoor.SetActive(false);
             NewDoor.SetActive(true);
-            main_door_new.SetActive(false);
-            main_door_old.SetActive(true);
+            //main_door_new.SetActive(false);
+            //main_door_old.SetActive(true);
             spook.SetActive(false);
             return;
         }
