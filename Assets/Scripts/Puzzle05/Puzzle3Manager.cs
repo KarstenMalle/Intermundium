@@ -1,9 +1,7 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.UIElements;
@@ -55,7 +53,7 @@ public class Puzzle3Manager : MonoBehaviour
         NewDoor.SetActive(false);
         chessBoardManager = ChessManager.GetComponent<ChessBoardManager>();
         VidPlayer.isLooping = true;
-
+        chessBoardManager.ChessCamera.enabled = false;
         //chessBoard = chessBoardManager.GetCurrentChessPiecePositions();
     }
 

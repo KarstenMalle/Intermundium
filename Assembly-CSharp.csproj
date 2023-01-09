@@ -194,6 +194,7 @@
     <Compile Include="Assets\Scripts\SFXtriggers\RandomEffectPlayer.cs" />
     <Compile Include="Assets\Scripts\Lights\LightFlickerEffectMultiple.cs" />
     <Compile Include="Assets\Mini First Person Controller\Scripts\Components\GroundCheck.cs" />
+    <Compile Include="Assets\PauseMenuLoad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

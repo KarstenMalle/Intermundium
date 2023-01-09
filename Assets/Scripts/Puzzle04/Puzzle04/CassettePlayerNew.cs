@@ -14,6 +14,9 @@ public class CassettePlayerNew : MonoBehaviour, IInteractable
     public GameObject cassetteObject;
     public GameObject bookObject;
     public GameObject bathtubObject;
+    public GameObject cassette1Object;
+    public GameObject cassette2Object;
+    public GameObject cassette3Object;
     public GameObject cassette4Object;
 
     [SerializeField] private IntSO cassettesSO;
@@ -26,6 +29,11 @@ public class CassettePlayerNew : MonoBehaviour, IInteractable
         toolTip.SetActive(false);
         bathtubObject.SetActive(false);
         bookObject.SetActive(false);
+        cassettesSO.Value = 0;
+
+        cassette2Object.SetActive(false);
+        cassette3Object.SetActive(false);
+        cassette4Object.SetActive(false);
     }
 
     void Update()
@@ -43,17 +51,20 @@ public class CassettePlayerNew : MonoBehaviour, IInteractable
         {
             if (cassettesSO.Value == 0)
             {
+                cassette1Object.SetActive(true);
                 Debug.Log("No cassette");
                 cassettesReady = false;
             }
             else if (cassettesSO.Value == 1)
             {
+                cassette2Object.SetActive(true);
                 Debug.Log("Play first cassette");
                 cassette1Sound.Play();
                 cassettesReady = false;
             }
             else if (cassettesSO.Value == 2)
             {
+                cassette3Object.SetActive(true);
                 Debug.Log("Play second cassette");
                 cassette2Sound.Play();
                 bathtubObject.SetActive(true);
@@ -61,11 +72,11 @@ public class CassettePlayerNew : MonoBehaviour, IInteractable
             }
             else if (cassettesSO.Value == 3)
             {
+                cassette4Object.SetActive(true);
                 Debug.Log("Play third cassette");
                 bathtubObject.SetActive(false);
                 cassette3Sound.Play();
                 cassettesReady = false;
-                
             }
             else if (cassettesSO.Value == 4)
             {
